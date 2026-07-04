@@ -91,8 +91,12 @@ function TripPage() {
 
       <div className="mx-auto max-w-6xl px-6 py-10 animate-unfold">
         <div className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-          {new Date(input.date).toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long" })} ·{" "}
-          {input.people} people · {input.duration}
+          {new Date(input.date).toLocaleDateString("en-IN", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+          })}{" "}
+          · {input.people} people · {input.duration}
         </div>
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
           <div>
@@ -103,9 +107,15 @@ function TripPage() {
             <IconButton onClick={() => toggleFavorite(id)} title="Favorite">
               {trip.favorite ? "♥" : "♡"}
             </IconButton>
-            <IconButton onClick={onShare} title="Share">↗</IconButton>
-            <IconButton onClick={onCopy} title="Copy">⧉</IconButton>
-            <IconButton onClick={onDelete} title="Delete">✕</IconButton>
+            <IconButton onClick={onShare} title="Share">
+              ↗
+            </IconButton>
+            <IconButton onClick={onCopy} title="Copy">
+              ⧉
+            </IconButton>
+            <IconButton onClick={onDelete} title="Delete">
+              ✕
+            </IconButton>
           </div>
         </div>
 
@@ -141,8 +151,13 @@ function TripPage() {
             <SectionTitle className="mt-16">Important Tips</SectionTitle>
             <ul className="mt-4 space-y-3">
               {plan.tips.map((t, i) => (
-                <li key={i} className="flex gap-3 rounded-2xl border border-border bg-card p-4 text-sm">
-                  <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <li
+                  key={i}
+                  className="flex gap-3 rounded-2xl border border-border bg-card p-4 text-sm"
+                >
+                  <span className="font-mono text-xs text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
                   <span className="text-foreground/90">{t}</span>
                 </li>
               ))}
@@ -302,13 +317,15 @@ function Stat({ label, value, accent }: { label: string; value: string; accent?:
     <div
       className={
         "rounded-2xl border p-4 " +
-        (accent
-          ? "border-accent/40 bg-accent/5"
-          : "border-border bg-card")
+        (accent ? "border-accent/40 bg-accent/5" : "border-border bg-card")
       }
     >
-      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">{label}</div>
-      <div className={"mt-1 font-display text-2xl italic " + (accent ? "text-accent" : "")}>{value}</div>
+      <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+        {label}
+      </div>
+      <div className={"mt-1 font-display text-2xl italic " + (accent ? "text-accent" : "")}>
+        {value}
+      </div>
     </div>
   );
 }
@@ -322,13 +339,25 @@ function CostRow({ label, value }: { label: string; value: number }) {
   );
 }
 
-function SectionTitle({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <h2 className={"font-display text-3xl italic " + className}>{children}</h2>
-  );
+function SectionTitle({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return <h2 className={"font-display text-3xl italic " + className}>{children}</h2>;
 }
 
-function IconButton({ children, onClick, title }: { children: React.ReactNode; onClick: () => void; title: string }) {
+function IconButton({
+  children,
+  onClick,
+  title,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  title: string;
+}) {
   return (
     <button
       onClick={onClick}

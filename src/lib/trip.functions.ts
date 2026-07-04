@@ -122,4 +122,3 @@ export const generateTrip = createServerFn({ method: "POST" })
       throw new Error("AI returned malformed plan — please try again");
     }
   });
-
