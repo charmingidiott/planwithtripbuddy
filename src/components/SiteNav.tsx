@@ -16,6 +16,13 @@ export function SiteNav() {
             History
           </Link>
           <Link
+            to="/about"
+            className="hidden text-foreground/70 transition-colors hover:text-accent sm:inline"
+            activeProps={{ className: "text-accent" }}
+          >
+            About Us
+          </Link>
+          <Link
             to="/plan"
             className="rounded-full bg-foreground px-5 py-2 text-background transition-colors hover:bg-accent"
           >
