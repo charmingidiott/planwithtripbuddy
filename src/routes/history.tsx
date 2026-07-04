@@ -83,8 +83,13 @@ function HistoryPage() {
                 className="group relative flex flex-col rounded-3xl border border-border bg-card p-6 transition-colors hover:border-accent/40"
               >
                 <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                  {new Date(t.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}
-                  {" · "}{t.input.people} people · ₹{t.plan.costPerPerson.toLocaleString("en-IN")}/pp
+                  {new Date(t.createdAt).toLocaleDateString("en-IN", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                  {" · "}
+                  {t.input.people} people · ₹{t.plan.costPerPerson.toLocaleString("en-IN")}/pp
                 </div>
                 <Link to="/trip/$id" params={{ id: t.id }} className="mt-2">
                   <h3 className="font-display text-2xl italic group-hover:text-accent">

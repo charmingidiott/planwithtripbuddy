@@ -12,7 +12,10 @@ export const Route = createFileRoute("/plan")({
   head: () => ({
     meta: [
       { title: "Plan a Trip — TripBuddy AI" },
-      { name: "description", content: "Set your budget, vibe and group — TripBuddy AI builds the rest." },
+      {
+        name: "description",
+        content: "Set your budget, vibe and group — TripBuddy AI builds the rest.",
+      },
     ],
   }),
   component: PlanPage,
@@ -36,7 +39,14 @@ const MOTIVES = [
 
 const TRANSPORT = ["Car", "Bike", "Train", "Metro", "Bus", "Cab", "Walking", "AI Suggest"];
 const DURATIONS = ["2 Hours", "Half Day", "Full Day", "Weekend"];
-const PERSONALITIES = ["Adventurous", "Food Lovers", "Chill Group", "Nature Lovers", "Party Group", "Family Friendly"];
+const PERSONALITIES = [
+  "Adventurous",
+  "Food Lovers",
+  "Chill Group",
+  "Nature Lovers",
+  "Party Group",
+  "Family Friendly",
+];
 
 const LOADING_MSGS = [
   "Finding amazing places...",
@@ -71,7 +81,10 @@ function PlanPage() {
   function detectLocation() {
     if (!navigator.geolocation) return toast.error("Geolocation not supported");
     navigator.geolocation.getCurrentPosition(
-      (pos) => setLocation(`Lat ${pos.coords.latitude.toFixed(3)}, Lng ${pos.coords.longitude.toFixed(3)}`),
+      (pos) =>
+        setLocation(
+          `Lat ${pos.coords.latitude.toFixed(3)}, Lng ${pos.coords.longitude.toFixed(3)}`,
+        ),
       () => toast.error("Couldn't get your location"),
     );
   }
@@ -298,7 +311,9 @@ function PlanPage() {
                       key={p}
                       className={
                         "flex cursor-pointer items-center gap-2 rounded-xl border p-3 text-sm transition-colors " +
-                        (personality === p ? "border-accent bg-accent/5" : "border-border hover:border-accent")
+                        (personality === p
+                          ? "border-accent bg-accent/5"
+                          : "border-border hover:border-accent")
                       }
                     >
                       <input
