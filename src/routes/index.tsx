@@ -92,6 +92,22 @@ function Landing() {
             Start Planning →
           </Link>
         </div>
+
+        <div className="rounded-[2rem] border border-border bg-card p-10 text-center shadow-soft md:p-16">
+          <h2 className="font-display text-4xl italic md:text-5xl">
+            Know More About Us
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-muted-foreground">
+            Contact Us and get In touch with us for any queries or suggestions. We are always happy to help you.
+          </p>
+          <Link
+            to="/plan"
+            className="mt-8 inline-block rounded-full bg-foreground px-8 py-4 font-bold uppercase tracking-widest text-background transition-colors hover:bg-accent"
+            style={{ fontSize: "0.75rem" }}
+          >
+            Contact Us →
+          </Link>
+        </div>
       </section>
 
       <footer className="border-t border-border py-10 text-center">
