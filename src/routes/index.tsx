@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/SiteNav";
 import { SurpriseButton } from "@/components/SurpriseButton";
+import { BetaMarquee } from "@/components/ui/BetaMarquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,6 +30,7 @@ function Landing() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
+      <BetaMarquee />
 
       <section className="mx-auto max-w-5xl px-6 py-24 text-center animate-unfold">
         <h1 className="text-balance font-display text-5xl font-bold italic leading-[0.95] md:text-7xl lg:text-8xl">
@@ -92,11 +94,34 @@ function Landing() {
             Start Planning →
           </Link>
         </div>
+        <br></br>
+        <div className="rounded-[2rem] border border-border bg-card p-10 text-center shadow-soft md:p-16">
+          <h2 className="font-display text-4xl italic md:text-5xl">
+             Help Shape TripBuddy AI❤️
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-muted-foreground">
+            You're among the first people to experience TripBuddy AI Beta.
+If you enjoyed using it—or found something that could be better—we'd love to hear from you. Every response helps us improve the experience before the official launch.
+
+          </p>
+          <Link
+            to="/feedback"
+            className="mt-8 inline-block rounded-full bg-foreground px-8 py-4 font-bold uppercase tracking-widest text-background transition-colors hover:bg-accent"
+            style={{ fontSize: "0.75rem" }}
+          >
+            Share Feedback →
+          </Link>
+                    <p className="mx-auto mt-4 max-w-md text-muted-foreground">
+                      Takes Less than 2 Minutes
+          </p>
+        </div>
       </section>
+      
 
       <footer className="border-t border-border py-10 text-center">
         <div className="font-display text-xl italic">TripBuddy AI</div>
         <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          Currently in Beta • Built with ❤️ to make planning outings effortless.<br></br>
           Made for adventure • {new Date().getFullYear()}
         </div>
       </footer>

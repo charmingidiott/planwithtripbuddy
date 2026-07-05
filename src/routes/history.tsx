@@ -118,6 +118,13 @@ function HistoryPage() {
           </div>
         )}
       </div>
+      <footer className="border-t border-border py-10 text-center">
+        <div className="font-display text-xl italic">TripBuddy AI</div>
+        <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          Currently in Beta • Built with ❤️ to make planning outings effortless.<br></br>
+          Made for adventure • {new Date().getFullYear()}
+        </div>
+      </footer>
       <SurpriseButton />
     </div>
   );

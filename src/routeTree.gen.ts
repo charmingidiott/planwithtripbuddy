@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PlanRouteImport } from './routes/plan'
 import { Route as HistoryRouteImport } from './routes/history'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TripIdRouteImport } from './routes/trip.$id'
@@ -29,6 +30,11 @@ const PlanRoute = PlanRouteImport.update({
 const HistoryRoute = HistoryRouteImport.update({
   id: '/history',
   path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -50,6 +56,7 @@ const TripIdRoute = TripIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/feedback': typeof FeedbackRoute
   '/history': typeof HistoryRoute
   '/plan': typeof PlanRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/feedback': typeof FeedbackRoute
   '/history': typeof HistoryRoute
   '/plan': typeof PlanRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/feedback': typeof FeedbackRoute
   '/history': typeof HistoryRoute
   '/plan': typeof PlanRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -75,13 +84,27 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/history' | '/plan' | '/sitemap.xml' | '/trip/$id'
+    | '/'
+    | '/about'
+    | '/feedback'
+    | '/history'
+    | '/plan'
+    | '/sitemap.xml'
+    | '/trip/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/history' | '/plan' | '/sitemap.xml' | '/trip/$id'
+  to:
+    | '/'
+    | '/about'
+    | '/feedback'
+    | '/history'
+    | '/plan'
+    | '/sitemap.xml'
+    | '/trip/$id'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/feedback'
     | '/history'
     | '/plan'
     | '/sitemap.xml'
@@ -91,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  FeedbackRoute: typeof FeedbackRoute
   HistoryRoute: typeof HistoryRoute
   PlanRoute: typeof PlanRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -120,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -147,6 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  FeedbackRoute: FeedbackRoute,
   HistoryRoute: HistoryRoute,
   PlanRoute: PlanRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

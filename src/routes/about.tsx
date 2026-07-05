@@ -68,8 +68,7 @@ function AboutPage() {
             </h2>
 
             <p className="mt-3 text-muted-foreground">
-              Powered by Google's Gemini AI to provide personalized travel ideas,
-              packing lists, transport suggestions, and useful travel tips.
+Powered by  AI to create personalized trip plans, smart recommendations, packing checklists, transport options, and practical travel insights.
             </p>
           </div>
 
@@ -134,20 +133,37 @@ function AboutPage() {
 
         </section>
 
-        {/* Footer */}
-        <div className="mt-20 border-t border-border pt-8 text-center">
+                <section className="mt-16">
 
-          <h3 className="font-display text-2xl italic">
-            Ready for your next adventure?
-          </h3>
+          <h2 className="mb-8 font-display text-4xl italic">
+            Contact Us
+          </h2>
 
-          <p className="mt-3 text-muted-foreground">
-            Let TripBuddy AI plan your next unforgettable journey.
-          </p>
+          <div className="grid gap-4 md:grid-cols-2">
 
-        </div>
+            <div className="rounded-3xl border border-border bg-card p-6">
+              Email Id : teamcraftedstudios@outlook.com
+            </div>
+
+            <div className="rounded-3xl border border-border bg-card p-6">
+              Instagram : <a href="https://www.instagram.com/craftedsolutions/" target="_blank" className="text-accent">@craftedsolutions</a>
+            </div>
+
+
+          </div>
+
+        </section>
+
+
 
       </div>
+            <footer className="border-t border-border py-10 text-center">
+        <div className="font-display text-xl italic">TripBuddy AI</div>
+        <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+          Currently in Beta • Built with ❤️ to make planning outings effortless.<br></br>
+          Made for adventure • {new Date().getFullYear()}
+        </div>
+      </footer>
 
       <SurpriseButton />
     </div>
