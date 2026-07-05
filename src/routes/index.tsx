@@ -32,12 +32,11 @@ function Landing() {
 
       <section className="mx-auto max-w-5xl px-6 py-24 text-center animate-unfold">
         <h1 className="text-balance font-display text-5xl font-bold italic leading-[0.95] md:text-7xl lg:text-8xl">
-          Plan the Perfect Outing with{" "}
-          <span className="text-accent">AI in Seconds.</span>
+          Plan the Perfect Outing with <span className="text-accent">AI in Seconds.</span>
         </h1>
         <p className="mx-auto mt-8 max-w-xl text-pretty text-lg text-muted-foreground">
-          Ditch the group-chat indecision. TripBuddy AI weaves your budget, vibe, and location
-          into a seamless day of discovery.
+          Ditch the group-chat indecision. TripBuddy AI weaves your budget, vibe, and location into
+          a seamless day of discovery.
         </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-4">
