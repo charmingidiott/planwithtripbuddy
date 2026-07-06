@@ -107,7 +107,7 @@ function FeedbackPage() {
         <div className="mt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           Currently in Beta • Built with ❤️ to make planning outings effortless.
           <br />
-          Made for adventure • {new Date().getFullYear()}
+          Made for adventure • {new Date().getFullYear()} • v1.0.0
         </div>
       </footer>
 
