@@ -53,14 +53,6 @@ export function SiteNav() {
                   </Link>
                 </div>
 
-                <div className="mt-10 border-t pt-6 text-sm text-muted-foreground">
-                  <p className="font-semibold text-foreground">
-                    🚀 You're using the Beta
-                  </p>
-                  <p className="mt-2">
-                    Thanks for helping us improve TripBuddy AI.
-                  </p>
-                </div>
               </SheetContent>
             </Sheet>
           </div>
